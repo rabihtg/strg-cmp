@@ -33,7 +33,23 @@ body {
   background: url(./images/bg-mobile.png) no-repeat;
   background-size: cover;
 }
-
+.attribution {
+  font-size: 11px;
+  position: absolute;
+  z-index: 9;
+  top: 25%;
+  pointer-events: none;
+  transform: translateX(-50%);
+  color: var(--Very-Dark-Blue);
+  left: 50%;
+  font-weight: 400;
+  text-align: center;
+}
+.attribution a {
+  pointer-events: all;
+  color: inherit;
+  font-weight: 700;
+}
 /* ---------------------------------------------------------------- Main
 -------------------------------------------------------------------------------------------------------- */
 
@@ -56,13 +72,14 @@ main {
   flex-direction: column;
   gap: 1.75rem;
 }
-.tools__btn-cont {
+.tools__btns-cont {
   display: flex;
   gap: 1rem;
 }
-.tools__icon-cont {
+.tools__btn-cont {
   background-color: var(--Very-Dark-Blue);
   width: 45px;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -137,9 +154,39 @@ main {
   display: flex;
   justify-content: space-between;
 }
+@media (hover: hover) {
+  .tools__btn-cont {
+    transition: transform 250ms ease;
+  }
+  .tools__btn-cont:hover {
+    transform: translateY(-5px);
+  }
+}
+.clipped-circle {
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  transform-origin: top right;
+  background-color: var(--Pale-Blue);
+  width: 100px;
+  transition: all 200ms ease-in-out;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  margin: 0;
+}
+.clipped-circle:hover,
+.clipped-circle:focus {
+  top: -800px;
+  right: -800px;
+  transform: scale(50);
+}
+.clipped-circle:hover + .data .data__left-tooltip {
+  background: #000;
+}
 
 @media (min-width: 768px) {
   body {
+    overflow: hidden;
     display: flex;
     align-items: center;
     background: url(./images/bg-desktop.png) no-repeat, var(--Very-Dark-Blue);
@@ -160,6 +207,7 @@ main {
   }
   .tools,
   .data {
+    z-index: 99;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
   }
   .data {
