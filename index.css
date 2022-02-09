@@ -1,0 +1,198 @@
+:root {
+  /* --------------------  Colors */
+  /* Primary */
+  --Gradient: hsl(6, 100%, 80%), hsl(335, 100%, 65%);
+
+  /* Neutral */
+  --Pale-Blue: hsl(243, 100%, 93%);
+  --Grayish-Blue: hsl(229, 7%, 55%);
+  --Dark-Blue: hsl(228, 56%, 26%);
+  --Very-Dark-Blue: hsl(229, 57%, 11%);
+
+  /* --------------------  Fonts */
+  --ff-sans: "Raleway", Arial, sans-serif;
+}
+
+/* ---------------------------------------------------------------- Resets / Global 
+-------------------------------------------------------------------------------------------------------- */
+html {
+  font-size: 14px;
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  font-size: 0.875rem;
+  font-family: var(--ff-sans);
+  margin: 0;
+  position: relative;
+  min-height: 100vh;
+  background: url(./images/bg-mobile.png) no-repeat;
+  background-size: cover;
+}
+
+/* ---------------------------------------------------------------- Main
+-------------------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------- tools */
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  width: 85%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+.tools {
+  background-color: var(--Dark-Blue);
+  padding: 2.75rem 2rem;
+  border-radius: 8px 100px 8px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+.tools__btn-cont {
+  display: flex;
+  gap: 1rem;
+}
+.tools__icon-cont {
+  background-color: var(--Very-Dark-Blue);
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+}
+
+.data {
+  background-color: var(--Dark-Blue);
+  border-radius: 8px;
+  padding: 2rem 3rem;
+  letter-spacing: 1px;
+  color: var(--Pale-Blue);
+  font-weight: 400;
+  text-align: center;
+  position: relative;
+}
+.data__consumed {
+  color: hsla(243, 100%, 93%, 0.7);
+  font-weight: 400;
+}
+.data__consumed-stnd-txt {
+  color: var(--Pale-Blue);
+  font-weight: 700;
+}
+.data__left-tooltip {
+  position: absolute;
+  background-color: hsl(0, 0%, 100%);
+  padding: 1rem;
+  border-radius: 8px;
+  left: 50%;
+  bottom: -0.5rem;
+  transform: translate(-50%, 50%);
+  color: var(--Grayish-Blue);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.data__left-tooltip-stnd-txt {
+  vertical-align: -6px;
+  margin-right: 2px;
+  font-weight: 700;
+  color: var(--Very-Dark-Blue);
+  font-size: clamp(2rem, 9vw, 2.75rem);
+}
+.data__range-bar {
+  border-radius: 50vw;
+  position: relative;
+  background-color: hsl(227, 57%, 18%);
+  height: 21px;
+  width: 100%;
+  text-align: left;
+  padding-block: 3px;
+  padding-inline: 3px;
+}
+.data__range-bar-color {
+  position: relative;
+  width: 81.5%;
+  border-radius: 50vw;
+  height: 15px;
+  background: linear-gradient(to right, var(--Gradient));
+  padding: 2px;
+}
+.data__range-bar-circle {
+  position: absolute;
+  right: 2px;
+  height: 11px;
+  aspect-ratio: 1 / 1;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 50%;
+}
+.data__minmax {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    align-items: center;
+    background: url(./images/bg-desktop.png) no-repeat, var(--Very-Dark-Blue);
+    background-size: 130% 50%;
+    background-position: left -15vw bottom 0;
+  }
+  main {
+    height: 100%;
+    gap: 2rem;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+  .data {
+    flex-basis: 70%;
+  }
+  .tools {
+    flex-basis: 30%;
+  }
+  .tools,
+  .data {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  }
+  .data {
+    text-align: left;
+    font-size: 1.05rem;
+    z-index: 99;
+  }
+  .data__left-tooltip::after {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    top: 19px;
+    right: 0;
+    overflow: hidden;
+    z-index: -1;
+
+    /* border-left: 35px solid transparent;
+    border-top: 35px solid hsl(0, 0%, 100%);
+    top: unset;
+    bottom: -34px;
+    height: 34px;
+    width: 34px;
+    background-color: transparent; */
+
+    clip-path: polygon(83% 72%, 100% 72%, 100% 100%, 83% 72%, 0 72%);
+    background-color: hsl(0, 0%, 100%);
+  }
+  .data__left-tooltip {
+    z-index: 99;
+    inset: unset;
+    border-radius: 8px 8px 0;
+    right: -2rem;
+    top: -50%;
+  }
+}

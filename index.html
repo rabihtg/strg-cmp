@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Fylo data storage component</title>
+  </head>
+  <body>
+    <main>
+      <div class="tools">
+        <div class="tools__logo_cont">
+          <img src="./images/logo.svg" alt="Fylo's Logo" />
+        </div>
+        <div class="tools__btn-cont">
+          <div class="tools__icon-cont">
+            <img src="./images/icon-document.svg" alt="a document icon" />
+          </div>
+          <div class="tools__icon-cont">
+            <img src="./images/icon-folder.svg" alt="a folder icon" />
+          </div>
+          <div class="tools__icon-cont">
+            <img src="./images/icon-upload.svg" alt="upload icon" />
+          </div>
+        </div>
+      </div>
+      <div class="data">
+        <p class="data__left-tooltip">
+          <span class="data__left-tooltip-stnd-txt">185</span> GB Left
+        </p>
+        <p class="data__consumed">
+          You’ve used <span class="data__consumed-stnd-txt"> 815 GB</span> of
+          your storage
+        </p>
+        <div class="data__range-bar">
+          <div class="data__range-bar-color">
+            <div class="data__range-bar-circle"></div>
+          </div>
+        </div>
+        <div class="data__minmax">
+          <p class="data__min">0 GB</p>
+          <p class="data__max">1000 GB</p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
