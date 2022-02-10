@@ -37,10 +37,10 @@ body {
   font-size: 11px;
   position: absolute;
   z-index: 9;
-  top: 25%;
+  top: 10%;
   pointer-events: none;
   transform: translateX(-50%);
-  color: var(--Very-Dark-Blue);
+  color: hsl(0, 0%, 100%);
   left: 50%;
   font-weight: 400;
   text-align: center;
@@ -49,6 +49,11 @@ body {
   pointer-events: all;
   color: inherit;
   font-weight: 700;
+}
+@media (max-width: 768px) {
+  .mobile-hidden {
+    display: none;
+  }
 }
 /* ---------------------------------------------------------------- Main
 -------------------------------------------------------------------------------------------------------- */
@@ -61,7 +66,7 @@ main {
   gap: 1rem;
   justify-content: center;
   width: 85%;
-  max-width: 1200px;
+  max-width: 950px;
   margin-inline: auto;
 }
 .tools {
@@ -78,7 +83,7 @@ main {
 }
 .tools__btn-cont {
   background-color: var(--Very-Dark-Blue);
-  width: 45px;
+  width: 50px;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -154,16 +159,11 @@ main {
   display: flex;
   justify-content: space-between;
 }
-@media (hover: hover) {
-  .tools__btn-cont {
-    transition: transform 250ms ease;
-  }
-  .tools__btn-cont:hover {
-    transform: translateY(-5px);
-  }
+.attribution {
+  color: var(--Very-Dark-Blue);
 }
 .clipped-circle {
-  position: absolute;
+  position: fixed;
   top: -25px;
   right: -25px;
   transform-origin: top right;
@@ -173,6 +173,14 @@ main {
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   margin: 0;
+}
+@media (hover: hover) {
+  .tools__btn-cont {
+    transition: transform 250ms ease;
+  }
+  .tools__btn-cont:hover {
+    transform: translateY(-5px);
+  }
 }
 .clipped-circle:hover,
 .clipped-circle:focus {
