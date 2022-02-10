@@ -64,12 +64,12 @@ main {
   gap: 1rem;
   justify-content: center;
   width: 85%;
-  max-width: 950px;
+  max-width: 900px;
   margin-inline: auto;
 }
 .tools {
   background-color: var(--Dark-Blue);
-  padding: 2.75rem 2rem;
+  padding: 2.5rem 4rem 2.5rem 2rem;
   border-radius: 8px 100px 8px 8px;
   display: flex;
   flex-direction: column;
@@ -111,7 +111,7 @@ main {
 .data__left-tooltip {
   position: absolute;
   background-color: hsl(0, 0%, 100%);
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   border-radius: 8px;
   left: 50%;
   bottom: -0.5rem;
@@ -206,10 +206,10 @@ main {
     align-items: flex-end;
   }
   .data {
-    flex-basis: 70%;
+    flex-basis: 75%;
   }
   .tools {
-    flex-basis: 30%;
+    flex-basis: 25%;
   }
   .tools,
   .data {
@@ -245,7 +245,7 @@ main {
   .data__left-tooltip {
     z-index: 99;
     inset: unset;
-    border-radius: 8px 8px 0;
+    border-radius: 8px 8px 3px;
     right: -2rem;
     top: -50%;
   }
