@@ -38,7 +38,6 @@ body {
   position: absolute;
   z-index: 9;
   top: 10%;
-  pointer-events: none;
   transform: translateX(-50%);
   color: hsl(0, 0%, 100%);
   left: 50%;
@@ -46,7 +45,6 @@ body {
   text-align: center;
 }
 .attribution a {
-  pointer-events: all;
   color: inherit;
   font-weight: 700;
 }
@@ -159,9 +157,6 @@ main {
   display: flex;
   justify-content: space-between;
 }
-.attribution {
-  color: var(--Very-Dark-Blue);
-}
 .clipped-circle {
   position: fixed;
   top: -25px;
@@ -193,6 +188,9 @@ main {
 }
 
 @media (min-width: 768px) {
+  .attribution {
+    color: var(--Very-Dark-Blue);
+  }
   body {
     overflow: hidden;
     display: flex;
